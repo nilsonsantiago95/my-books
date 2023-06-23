@@ -6,6 +6,7 @@ const router = express.Router()
 
 router.post('/authors', authorController.store)
 router.get('/authors', authorController.index)
+router.get('/authors/:id', authorController.getOne)
 router.put('/authors/:id', authorController.put)
 router.delete('/authors/:id', authorController.delete)
 

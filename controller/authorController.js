@@ -20,6 +20,13 @@ module.exports = {
         }
     },
 
+    async getOne(req,res) {
+        const author = await Author.findByPk(req.params.id)
+
+        if(!author) return res.send("Esse autor não está cadastrado")
+        res.json(author)
+    },
+
     async put(req, res) {
         try {
             const { name, birthPlace, dateBirth } = req.body
